@@ -12,6 +12,13 @@
 #define NUM_SPRITES	100
 #define MAX_SPEED 	1
 
+#ifdef PSP
+#include <pspdebug.h>
+
+#define fprintf(x, args...) pspDebugScreenPrintf(args)
+#define printf(args...) pspDebugScreenPrintf(args)
+#endif /* PSP */
+
 SDL_Surface *sprite;
 int numsprites;
 SDL_Rect *sprite_rects;

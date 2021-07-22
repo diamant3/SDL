@@ -113,6 +113,9 @@ static AudioBootStrap *bootstrap[] = {
 #if SDL_AUDIO_DRIVER_EPOCAUDIO
 	&EPOCAudio_bootstrap,
 #endif
+#ifdef SDL_AUDIO_DRIVER_PSP
+	&PSPAUD_bootstrap,
+#endif
 	NULL
 };
 SDL_AudioDevice *current_audio = NULL;

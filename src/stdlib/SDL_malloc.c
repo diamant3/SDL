@@ -504,6 +504,10 @@ DEFAULT_MMAP_THRESHOLD       default: 256K
 #endif  /* HAVE_MORECORE */
 #endif  /* DARWIN */
 
+#ifdef ENABLE_PSP
+#define HAVE_MMAP 0
+#endif
+
 #ifndef LACKS_SYS_TYPES_H
 #include <sys/types.h>  /* For size_t */
 #endif  /* LACKS_SYS_TYPES_H */
