@@ -71,6 +71,7 @@ OBJS= src/SDL.o \
       src/video/SDL_blit_slow.o \
       src/video/SDL_bmp.o \
       src/video/SDL_clipboard.o \
+      src/events/SDL_displayevents.o \
       src/video/SDL_fillrect.o \
       src/video/SDL_pixels.o \
       src/video/SDL_rect.o \
@@ -82,7 +83,8 @@ OBJS= src/SDL.o \
       src/video/psp/SDL_pspevents.o \
       src/video/psp/SDL_pspvideo.o \
       src/video/psp/SDL_pspgl.o \
-      src/video/psp/SDL_pspmouse.o
+      src/video/psp/SDL_pspmouse.o \
+      src/joystick/virtual/SDL_virtualjoystick.o
 
 INCDIR = ./include
 CFLAGS = -g -O2 -G0 -Wall -D__PSP__ -DHAVE_OPENGL
