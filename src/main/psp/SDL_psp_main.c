@@ -13,6 +13,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#ifdef main
+#  undef main
+#endif /* main */
+
 /* If application's main() is redefined as SDL_main, and libSDLmain is
    linked, then this file will create the standard exit callback,
    define the PSP_MODULE_INFO macro, and exit back to the browser when
