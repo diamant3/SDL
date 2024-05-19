@@ -49,6 +49,7 @@ static SDLKey keymap[256];
 #endif
 
 static enum PspHprmKeys hprm = 0;
+u32 hprm_value = 0;
 static SDL_sem *event_sem = NULL;
 static SDL_Thread *thread = NULL;
 static int running = 0;
@@ -68,7 +69,9 @@ int EventUpdate(void *data)
 {
 	while (running) {
                 SDL_SemWait(event_sem);
-		sceHprmPeekCurrentKey(&hprm);
+				hprm_value=(u32)hprm;
+		sceHprmPeekCurrentKey(&hprm_value);
+		hprm = (enum PspHprmKeys)hprm_value;
                 SDL_SemPost(event_sem);
                 /* Delay 1/60th of a second */
                 sceKernelDelayThread(1000000 / 60);  
